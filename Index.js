@@ -15,6 +15,8 @@ let passwordLength = 10;
 let checkCount = 1;
 handleSlider();
 
+setIndicator("#ccc");
+
 function handleSlider() {
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
@@ -135,15 +137,13 @@ generateBtn.addEventListener('click', () => {
     if (lowercaseCheck.checked) funcArr.push(generateLowerCase);
     if (numbersCheck.checked) funcArr.push(generateRandomNumber);
     if (symbolsCheck.checked) funcArr.push(generateSymbol);
-
+    
+    // Compulsory addition
     for (let i = 0; i < funcArr.length; i++) {
         password += funcArr[i]();
     }
 
-    for (let i = 0; i < funcArr.length; i++) {
-        password += funcArr[i]();
-    }
-
+    // Remaining addition
     for (let i = 0; i < passwordLength - funcArr.length; i++) {
         let randIndex = getRndInteger(0, funcArr.length);
         password += funcArr[randIndex]();

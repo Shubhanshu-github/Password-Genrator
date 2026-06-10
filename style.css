@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root {
+    --dk-violet: hsla(272, 74%, 9%, 0.707);
+    --lt-violet: hsl(257, 27%, 26%);
+    --lt-violet2: hsl(240, 27%, 26%);
+    --vb-violet: hsl(257, 27%, 26%);
+    --vb-violet2: hsl(257, 27%, 26%);
+
+    --vb-yellow: hsl(52, 100%, 62%);
+
+    --pl-white: hsl(0, 0%, 100%);
+
+    --vb-cyan: hsl(180, 100%, 37%);
+    --vb-cyan2: hsl(180, 100%, 37%);
+
+    --dk-teal: hsl(180, 100%, 37%);
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dk-violet);
+}
+.container{
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: var(--pl-white);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.display-container {
+    position: relative;
+    background-color: var(--lt-violet);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.display {
+    width: 100%;
+    padding: 1.25rem 1rem;
+    font-size: 1.25rem;
+    color: var(--vb-violet);
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: var(--vb-yellow);
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.display-container button {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.input-container {
+    width: 100%;
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    padding: 1rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.length-container p:nth-child(1) {
+    color: var(--pl-white);
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2) {
+    color: var(--vb-yellow);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* layout for each checkbox row inside the input container */
+.input-container > div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.45rem 0;
+}
+
+.strength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color: var(--pl-white);
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+}
+
+.generateButton {
+    width: 100%;
+    padding: 1rem 0; 
+    background-color: var(--vb-violet);
+    text-align: center;
+    color: var(--vb-yellow);
+    border-bottom: 0.35rem solid var(--vb-yellow);
+    border-radius: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem 0;
+    gap: 0 1rem;
+}
+
+.checkbox-container input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--vb-cyan);
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.checkbox-container input:checked {
+    background-color: var(--vb-cyan);
+}
+
+.checkbox-container input:checked::before{
+    content: '';
+    position: absolute;
+    color: var(--dk-text);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid var(--pl-white);
+    border-bottom: 2px solid var(--pl-white);
+}
